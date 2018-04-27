@@ -1,0 +1,25 @@
+
+<h2>Configure product Banner</h2>
+<h2>Banner Image,Title,Button</h2>
+<div
+    data-sly-use.multiItems="com.aem.community.core.models.ProductBanner">
+
+<img src=${multiItems.imagepath} height=250 width=800 style="padding:10px"/>
+
+   <h2>${multiItems.imageheading}</h2>
+   <h2>${multiItems.cta}</h2>
+
+<h2>Mutlifield Image and Text starts from here</h2>
+
+ <div data-sly-list.head="${multiItems.products.listChildren}">
+ <div style="height:250px;">
+
+       <img src=${head.pathbr} height=200 width=270 style="padding:4px"/>
+        <h2>${head.product}</h2>
+
+
+     </div>
+ <hr>
+
+   </div>
+</div>
