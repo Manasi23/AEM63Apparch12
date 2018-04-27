@@ -1,0 +1,11 @@
+
+  Card List Component component.
+
+  Card List Component with three cards, title and text field
+ <sly data-sly-use.model="com.aem.community.core.models.CardListModel">
+ <div data-sly-list.test="${model.cardlist.listChildren}">
+  <h1> ${test.linkText}</h1>
+  </div>
+  </sly>
+ ${model.title}
+ ${model.text}
