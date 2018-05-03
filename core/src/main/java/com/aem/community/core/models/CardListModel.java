@@ -7,7 +7,7 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
  
-@Model(adaptables=Resource.class, resourceType="AEM63App/components/content/card-list")
+@Model(adaptables=Resource.class, resourceType="AEM63App666/components/content/card-list")
 @Exporter(name="jackson", extensions ="json")
 public class CardListModel {
 

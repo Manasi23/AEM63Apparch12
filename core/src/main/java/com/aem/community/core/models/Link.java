@@ -23,10 +23,10 @@ public class Link {
 	@Optional
 	private String linkUrl;
 	
-	@Inject
+	/*@Inject
 	@Named("file")
 	@Optional
-	private String file;
+	private String file;*/
 
 	@PostConstruct
 	protected void init() {
@@ -40,7 +40,7 @@ public class Link {
 	public String getLinkUrl() {
 		return linkUrl;
 	}
-	public String getFile() {
+	/*public String getFile() {
 		return file;
-	}
+	}*/
 }
