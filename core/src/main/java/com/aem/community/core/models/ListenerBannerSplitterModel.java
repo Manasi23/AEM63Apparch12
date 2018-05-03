@@ -31,7 +31,7 @@ public class ListenerBannerSplitterModel {
 	 @Optional
 	 @JsonIgnore
 	 @JsonProperty("ivselectorL")	 
-	 public String ivselectorL;
+	 public String ivselectorL = "";
 
 	 @Inject
 	 @Optional
@@ -112,7 +112,7 @@ public class ListenerBannerSplitterModel {
 	 @Optional
 	 @JsonIgnore
 	 @JsonProperty("ivselectorR")
-	 public String ivselectorR;
+	 public String ivselectorR = "";
 
 	 @Inject
 	 @Optional
