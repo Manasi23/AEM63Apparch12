@@ -22,12 +22,13 @@ public class ProductBanner
   @Inject
   @Optional
   public Resource products;
-  
-  @ValueMapValue
+ 
+  @Inject
+  //@ValueMapValue
   @Optional
   public String imagepath;
   
-  @ValueMapValue
+  @Inject
   @Optional  
   public String imageheading;
   

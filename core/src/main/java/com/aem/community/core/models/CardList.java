@@ -22,11 +22,11 @@ import org.slf4j.LoggerFactory;
 @Exporter(name = "jackson", extensions = "json")
 public class CardList {
 	private final static Logger logger = LoggerFactory.getLogger(CardList.class);
-	@ValueMapValue
+	@Inject
 	@Optional
 	private String title;
 
-	@ValueMapValue
+	@Inject
 	@Optional
 	private String text;
 	
