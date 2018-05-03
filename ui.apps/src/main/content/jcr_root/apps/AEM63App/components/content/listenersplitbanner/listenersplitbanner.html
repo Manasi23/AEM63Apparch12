@@ -1,0 +1,47 @@
+
+
+this is splitbanner component..!!
+
+<br>
+
+<sly data-sly-use.testsling="com.aem.community.core.models.ListenerBannerSplitterModel">
+
+LEFT PORTION
+<br>
+				${testsling.titleL}<br>
+		 		${testsling.imgurlL}<br>
+		 		${testsling.imgaltL}<br>
+			    ${testsling.ctatextL}<br>
+		 		${testsling.ctaurlL}<br><br>
+
+                 ${testsling.videolinkL}<br>
+                 ${testsling.videotextL}<br>
+                 ${testsling.videoassetL}<br>
+                 ${testsling.serverurlL}<br>
+                 ${testsling.emailurlL}<br>
+                 ${testsling.videoserverurlL}<br>
+                 ${testsling.posterimageL}<br>
+<br>
+RIGHT PORTION
+
+<br>
+				${testsling.titleR}<br>
+		 		${testsling.imgurlR}<br>
+		 		${testsling.imgaltR}<br>
+			    ${testsling.ctatextR}<br>
+		 		${testsling.ctaurlR}<br>
+
+                 ${testsling.videolinkR}<br>
+                 ${testsling.videotextR}<br>
+                 ${testsling.videoassetR}<br>
+                 ${testsling.serverurlR}<br>
+                 ${testsling.emailurlR}<br>
+                 ${testsling.videoserverurlR}<br>
+                 ${testsling.posterimageR}<br>
+
+    <ul data-sly-list="${testsling.imagelist}"> 
+        <li>${item}</li>
+    </ul>
+
+
+</sly>
