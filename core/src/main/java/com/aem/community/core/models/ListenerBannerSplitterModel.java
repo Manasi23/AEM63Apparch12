@@ -191,8 +191,6 @@ public class ListenerBannerSplitterModel {
 	 
 	 public List<Map<String, String>> rightlist = new ArrayList<>();
 	 
-	 public List<Map<String, String>> testList = new ArrayList<>();
-	 
 	@PostConstruct
     protected void init() {
 			
