@@ -26,12 +26,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ListenerBannerSplitterModel {
 
 	
-	
+/* LEFT PORTION INJECTION */
 	 @Inject
 	 @Optional
 	 @JsonIgnore
 	 @JsonProperty("ivselectorL")	 
-	 public String ivselectorL = "";
+	 public String ivselectorL="";
 
 	 @Inject
 	 @Optional
@@ -106,13 +106,13 @@ public class ListenerBannerSplitterModel {
 	 public String posterimageL;
 	 
 	 
-	 /* - - ---------- RIGHT BANNER -- - -- - - - - - - - -*/
+	 /* RIGHT PORTION INJECTION */
 	 
 	 @Inject
 	 @Optional
 	 @JsonIgnore
 	 @JsonProperty("ivselectorR")
-	 public String ivselectorR = "";
+	 public String ivselectorR="";
 
 	 @Inject
 	 @Optional
@@ -186,65 +186,50 @@ public class ListenerBannerSplitterModel {
 	 @JsonProperty("posterimageR")
 	 public String posterimageR;
 	 
-	//  List implementation start
-	 //@JsonProperty("List")
+
 	 public List<Map<String, String>> leftlist = new ArrayList<>();
 	 
 	 public List<Map<String, String>> rightlist = new ArrayList<>();
 	 
+	 public List<Map<String, String>> testList = new ArrayList<>();
 	 
-	 public List<Map<String, String>> getLeftlist() {
-			return leftlist;
-		}
-	 
-
-		public List<Map<String, String>> getRightlist() {
-			return rightlist;
-		}
-
-
-//  List implementation start
-
-		
-		
-
 	@PostConstruct
     protected void init() {
-		
-		  
-		
-		if(ivselectorL.equals("image"))
-		{
+			
+		ListenerBannerSplitterBean listenerBannerSplitterBean = new ListenerBannerSplitterBean( ivselectorL,  imgurlL,  imgaltL,  ctatextL,  ctaurlL, videolinkL,  videotextL,  videoassetL,  serverurlL,  emailurlL,  videoserverurlL,  ivselectorR,  titleR,  imgurlR,  imgaltR,  ctatextR,  ctaurlR,  videolinkR,  videotextR,  videoassetR,  serverurlR,  emailurlR,  videoserverurlR,  posterimageR); // Calling the contructor for Getters and Setters
 
+		if(listenerBannerSplitterBean.ivselectorL.equals("image"))
+		{
 			videolinkL=null;
-            videotextL=null;
-            videoassetL=null;
-            serverurlL=null;
-            emailurlL=null;
-            videoserverurlL=null;
-            posterimageL=null;
-            
-    		Map<String, String> ivmap = new TreeMap<>();
-    		
-    		if (titleL!=null)
-    		ivmap.put("title", titleL);
-    		
-    		if (imgurlL!=null)
-    		ivmap.put("imgurl", imgurlL);
-    		
-    		if (imgaltL!=null)
-    		ivmap.put("imgalt", imgaltL);
-    		
-    		if (ctatextL!=null)
-    		ivmap.put("ctatext", ctatextL);
-    		
-    		if (ctaurlL!=null)
-    		ivmap.put("ctaurl", ctaurlL);
-    			
-    		leftlist.add(ivmap);
+	        videotextL=null;
+	        videoassetL=null;
+	        serverurlL=null;
+	        emailurlL=null;
+	        videoserverurlL=null;
+	        posterimageL=null;
+	        
+			Map<String, String> ivmap = new TreeMap<>();
+					
+			if (titleL!=null)
+			ivmap.put("title", titleL);
+			
+			if (imgurlL!=null)
+			ivmap.put("imgurl", imgurlL);
+			
+			if (imgaltL!=null)
+			ivmap.put("imgalt", imgaltL);
+			
+			if (ctatextL!=null)
+			ivmap.put("ctatext", ctatextL);
+			
+			if (ctaurlL!=null)
+			ivmap.put("ctaurl", ctaurlL);
+				
+			leftlist.add(ivmap);
 			
 		}
-		
+
+
 		if(ivselectorL.equals("video"))
 		{
 
@@ -255,7 +240,7 @@ public class ListenerBannerSplitterModel {
 	 		ctaurlL=null;
 			
 	 		Map<String, String> ivmap = new TreeMap<>();
-    		
+			
 	 		if (videolinkL!=null)
 	 		ivmap.put("videolink", videolinkL);
 	 		
@@ -276,8 +261,9 @@ public class ListenerBannerSplitterModel {
 	 		
 	 		if (posterimageL!=null)
 	 		ivmap.put("posterimage", posterimageL);
-    			
-    		leftlist.add(ivmap);
+				
+			leftlist.add(ivmap);
+			
 			
 		}
         
@@ -285,40 +271,37 @@ public class ListenerBannerSplitterModel {
 		{
 
 			videolinkR=null;
-            videotextR=null;
-            videoassetR=null;
-            serverurlR=null;
-            emailurlR=null;
-            videoserverurlR=null;
-            posterimageR=null;
-            
-            Map<String, String> ivmap = new TreeMap<>();
-    		
-            if (titleR!=null)
-    		ivmap.put("title", titleR);
-            
-            if (imgurlR!=null)
-    		ivmap.put("imgurl", imgurlR);
-            
-            if (imgaltR!=null)
-    		ivmap.put("imgalt", imgaltR);
-            
-            if (ctatextR!=null)
-    		ivmap.put("ctatext", ctatextR);
-            
-            if (ctaurlR!=null)
-    		ivmap.put("ctaurl", ctaurlR);
-    			
-    		rightlist.add(ivmap);
+	        videotextR=null;
+	        videoassetR=null;
+	        serverurlR=null;
+	        emailurlR=null;
+	        videoserverurlR=null;
+	        posterimageR=null;
+	        
+	        Map<String, String> ivmap = new TreeMap<>();
+			
+	        if (titleR!=null)
+			ivmap.put("title", titleR);
+	        
+	        if (imgurlR!=null)
+			ivmap.put("imgurl", imgurlR);
+	        
+	        if (imgaltR!=null)
+			ivmap.put("imgalt", imgaltR);
+	        
+	        if (ctatextR!=null)
+			ivmap.put("ctatext", ctatextR);
+	        
+	        if (ctaurlR!=null)
+			ivmap.put("ctaurl", ctaurlR);
+				
+			rightlist.add(ivmap);
 			
 		}
 		
 		if(ivselectorR.equals("video"))
 		{
-
-
-            
-            titleR=null;
+			titleR=null;
 	 		imgurlR=null;
 	 		imgaltR=null;
 		    ctatextR=null;
@@ -348,306 +331,13 @@ public class ListenerBannerSplitterModel {
 	 		ivmap.put("posterimage", posterimageR);
     			
     		rightlist.add(ivmap);
-			
+    		
 		}
-		
-
-		
 
     }
-
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getIvselectorL() {
-		return ivselectorL;
-	}
-
-
-	public void setIvselectorL(String ivselectorL) {
-		this.ivselectorL = ivselectorL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL)
-	@JsonIgnore
-	public String getTitleL() {
-		return titleL;
-	}
-
-
-	public void setTitleL(String titleL) {
-		this.titleL = titleL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getImgurlL() {
-		return imgurlL;
-	}
-
-
-	public void setImgurlL(String imgurlL) {
-		this.imgurlL = imgurlL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getImgaltL() {
-		return imgaltL;
-	}
-
-
-	public void setImgaltL(String imgaltL) {
-		this.imgaltL = imgaltL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getCtatextL() {
-		return ctatextL;
-	}
-
-
-	public void setCtatextL(String ctatextL) {
-		this.ctatextL = ctatextL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getCtaurlL() {
-		return ctaurlL;
-	}
-
-
-	public void setCtaurlL(String ctaurlL) {
-		this.ctaurlL = ctaurlL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideolinkL() {
-		return videolinkL;
-	}
-
-
-	public void setVideolinkL(String videolinkL) {
-		this.videolinkL = videolinkL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideotextL() {
-		return videotextL;
-	}
-
-
-	public void setVideotextL(String videotextL) {
-		this.videotextL = videotextL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideoassetL() {
-		return videoassetL;
-	}
-
-
-	public void setVideoassetL(String videoassetL) {
-		this.videoassetL = videoassetL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getServerurlL() {
-		return serverurlL;
-	}
-
-
-	public void setServerurlL(String serverurlL) {
-		this.serverurlL = serverurlL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getEmailurlL() {
-		return emailurlL;
-	}
-
-
-	public void setEmailurlL(String emailurlL) {
-		this.emailurlL = emailurlL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideoserverurlL() {
-		return videoserverurlL;
-	}
-
-
-	public void setVideoserverurlL(String videoserverurlL) {
-		this.videoserverurlL = videoserverurlL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getPosterimageL() {
-		return posterimageL;
-	}
-
-
-	public void setPosterimageL(String posterimageL) {
-		this.posterimageL = posterimageL;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL)
-	@JsonIgnore
-	public String getIvselectorR() {
-		return ivselectorR;
-	}
-
-
-	public void setIvselectorR(String ivselectorR) {
-		this.ivselectorR = ivselectorR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getTitleR() {
-		return titleR;
-	}
-
-
-	public void setTitleR(String titleR) {
-		this.titleR = titleR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getImgurlR() {
-		return imgurlR;
-	}
-
-
-	public void setImgurlR(String imgurlR) {
-		this.imgurlR = imgurlR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getImgaltR() {
-		return imgaltR;
-	}
-
-
-	public void setImgaltR(String imgaltR) {
-		this.imgaltR = imgaltR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getCtatextR() {
-		return ctatextR;
-	}
-
-
-	public void setCtatextR(String ctatextR) {
-		this.ctatextR = ctatextR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getCtaurlR() {
-		return ctaurlR;
-	}
-
-
-	public void setCtaurlR(String ctaurlR) {
-		this.ctaurlR = ctaurlR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideolinkR() {
-		return videolinkR;
-	}
-
-
-	public void setVideolinkR(String videolinkR) {
-		this.videolinkR = videolinkR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideotextR() {
-		return videotextR;
-	}
-
-
-	public void setVideotextR(String videotextR) {
-		this.videotextR = videotextR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideoassetR() {
-		return videoassetR;
-	}
-
-
-	public void setVideoassetR(String videoassetR) {
-		this.videoassetR = videoassetR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getServerurlR() {
-		return serverurlR;
-	}
-
-
-	public void setServerurlR(String serverurlR) {
-		this.serverurlR = serverurlR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getEmailurlR() {
-		return emailurlR;
-	}
-
-
-	public void setEmailurlR(String emailurlR) {
-		this.emailurlR = emailurlR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getVideoserverurlR() {
-		return videoserverurlR;
-	}
-
-
-	public void setVideoserverurlR(String videoserverurlR) {
-		this.videoserverurlR = videoserverurlR;
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL) 
-	@JsonIgnore
-	public String getPosterimageR() {
-		return posterimageR;
-	}
-
-
-	public void setPosterimageR(String posterimageR) {
-		this.posterimageR = posterimageR;
-	}
-
-
-
-
-
-
+	
+	
+	
 
 
 
