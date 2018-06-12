@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    fieldLabel="Banner">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <bannerconfig
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Config"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <pageuse
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide cq-dialog-tab-showhide"
+                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                cq-dialog-tab-showhide-target=".list-option-tab-showhide-target"
+                                fieldLabel="Page Use"
+                                name="./pageuse"
+                                value="home">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <select
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Select"
+                                        value="select"/>
+                                    <home
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Home"
+                                        value="home"/>
+                                    <clp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="CLP"
+                                        value="clp"/>
+                                    <plp
+                                        jcr:primaryType="nt:unstructured"
+                                        text="PLP"
+                                        value="plp"/>
+                                </items>
+                            </pageuse>
+                            <enable
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"
+                                id="enable"
+                                name="./enable"
+                                text="Enable"
+                                value="true"/>
+                            <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide button-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <conditionalContentPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Conditional Content Path"
+                                        name="./conditionalContentPath"/>
+                                </items>
+                            </showHideContainer>
+                        </items>
+                    </column>
+                </items>
+            </bannerconfig>
+            <bannerfields
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Banner Fields"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="[clp,home,plp]">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        class="field-tabAnchor"
+                                        fieldLabel="Heading"
+                                        name="./heading"
+                                        required="{Boolean}true"
+                                        validation="my.custom.email.validator"/>
+                                </items>
+                            </heading>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="[clp,home,plp]">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Image"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Image Link"
+                                                name="./imageLink"
+                                                required="{Boolean}true"
+                                                rootPath="/content"/>
+                                            <imagealtxt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Image Alt Text"
+                                                name="./imgAltTxt"
+                                                required="{Boolean}true"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </image>
+                            <primaryCTA
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="[clp,home]">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Primary CTA:"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <buttonlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Button Label"
+                                                name="./buttonLabel"
+                                                required="{Boolean}true"/>
+                                            <buttonlink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Button Link"
+                                                name="./buttonLink"
+                                                required="{Boolean}true"
+                                                rootPath="/content"/>
+                                            <buttonlinktarget
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Button Link Target"
+                                                name="./buttonLinkTarget"
+                                                required="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <samewindow
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Same Window"
+                                                        value=""/>
+                                                    <newtab
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="New Tab"
+                                                        value="_blank"/>
+                                                </items>
+                                            </buttonlinktarget>
+                                        </items>
+                                    </well>
+                                </items>
+                            </primaryCTA>
+                            <contentalignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="[clp,home]">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <contentalignment
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Content Alignment"
+                                        name="./contentAlignment"
+                                        required="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <leftaligned
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Left Aligned"
+                                                value="left"/>
+                                            <rightaligned
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right Aligned"
+                                                value="right"/>
+                                            <centeraligned
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center Aligned"
+                                                value="center"/>
+                                        </items>
+                                    </contentalignment>
+                                </items>
+                            </contentalignment>
+                            <colortheme
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="[clp,home,plp]">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <colortheme
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Color Theme"
+                                        name="./colorTheme"
+                                        required="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <light
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Light"
+                                                value="light"/>
+                                            <dark
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Dark"
+                                                value="dark"/>
+                                            <gold
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Gold Member"
+                                                value="gold"/>
+                                        </items>
+                                    </colortheme>
+                                </items>
+                            </colortheme>
+                        </items>
+                    </column>
+                </items>
+                <layoutConfig
+                    jcr:primaryType="nt:unstructured"
+                    class="hide list-option-tab-showhide-target home clp plp"/>
+            </bannerfields>
+        </items>
+    </content>
+</jcr:root>
